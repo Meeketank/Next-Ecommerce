@@ -1,9 +1,13 @@
-import { privateDecrypt } from "crypto";
+"use client";
+
 import Image from "next/image";
 import products from "../app/data/watches.json";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [index, setIndex] = useState(0);
+
   return (
     <>
       <header style={{ color: "beige", backgroundColor: "#006039", padding: 10 }}>
@@ -55,10 +59,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <h1 style={{textAlign: "center", padding: 20, borderBottom: "5px solid #006039"}}><b>ONGOING OFFERS</b></h1>
+        <div style={{ margin: "40px 20px", overflow: "hidden", position: "relative" }}>
+          <button onClick={() => setIndex((prev) => (prev - 1 + 3) % 3)} style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", padding: "10px 20px", backgroundColor: "#006039", color: "beige", border: "none", borderRadius: "5px", cursor: "pointer", opacity: 0.7, zIndex: 1 }}>&lt;</button>
+          <div style={{ display: "flex", transition: "transform 0.5s ease-in-out", transform: `translateX(-${index * 100}%)` }}>
+            <div style={{ minWidth: "100%", height: "300px", backgroundColor: "#a37e2c", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "24px", fontWeight: "bold", color: "#fff", borderRadius: "10px" }}>Product Slide 1</div>
+            <div style={{ minWidth: "100%", height: "300px", backgroundColor: "	#006039", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "24px", fontWeight: "bold", color: "#fff", borderRadius: "10px" }}>Product Slide 2</div>
+            <div style={{ minWidth: "100%", height: "300px", backgroundColor: "	#a37e2c", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "24px", fontWeight: "bold", color: "#fff", borderRadius: "10px" }}>Product Slide 3</div>
+          </div>
+          <button onClick={() => setIndex((prev) => (prev + 1) % 3)} style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", padding: "10px 20px", backgroundColor: "#006039", color: "beige", border: "none", borderRadius: "5px", cursor: "pointer", opacity: 0.7, zIndex: 1 }}>&gt;</button>
+        </div>
         <h1 style={{textAlign: "center", padding: 20, borderBottom: "5px solid #006039"}}><b>NEW TRENDING</b></h1>
         <div>
-
+          <br/>
         </div>
+
         <div>
           <footer style={{backgroundColor: "#006039", textAlign: "center", color: "beige", padding: 20}}><b>Created and Managed by Meeket Tank</b></footer>
         </div>

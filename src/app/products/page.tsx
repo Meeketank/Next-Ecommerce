@@ -36,10 +36,11 @@ export default function Products() {
               <h3 style={{ fontSize: 16 }}><u>{product.name}</u></h3>
               <p>Price: <b>₹{product.price}</b></p>
               <br/>
-              <button style={{color: "beige", backgroundColor: "#006039", paddingLeft: 20, paddingRight: 20, borderRadius: 4}}>Show Details</button>
+              <button style={{color: "beige", backgroundColor: "#006039", paddingLeft: 12, paddingRight: 12, borderRadius: 4}}>Show Details</button>
             </div>
           ))}
         </div>
+        
     </>
     
   );
