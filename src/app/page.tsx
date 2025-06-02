@@ -55,7 +55,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <h1 style={{textAlign: "center", padding: 20, borderBottom: "5px solid #006039"}}><b>NEW TREDING</b></h1>
+        <h1 style={{textAlign: "center", padding: 20, borderBottom: "5px solid #006039"}}><b>NEW TRENDING</b></h1>
         <div>
 
         </div>
