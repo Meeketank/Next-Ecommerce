@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import products from "../data/watches.json";
+import { useEffect, useState } from "react";
+
 
 export default function Products() {
+
   return (
     <>
-      
     <div style={{ display: "flex", alignItems: "center", padding: 10, justifyContent: "space-between", backgroundColor: "#006039"}}>
           <Image
             src="/next.svg"
@@ -30,17 +32,17 @@ export default function Products() {
         
         <div style={{ display: "flex", flexWrap: "wrap", gap: 50, justifyContent: "center", padding: 20 }}>
           {products.map((product) => (
-            <div key={product.id} style={{ width: 180, border: "1px solid #ccc", borderRadius: 8, padding: 30, textAlign: "center", background: "#f9f9f9" }}>
-              <Image src={product.image} width={150} height={150} alt="Watch" />
+            <div key={product.id} style={{ width: 180, border: "1px solid #ccc", borderRadius: 8, padding: 10, textAlign: "center", background: "#f9f9f9" }}>
+              <Image src={product.image} width={150} height={150} style={{borderRadius: 10}} alt="Watch" />
               <br/>
               <h3 style={{ fontSize: 16 }}><u>{product.name}</u></h3>
               <p>Price: <b>₹{product.price}</b></p>
               <br/>
               <button style={{color: "beige", backgroundColor: "#006039", paddingLeft: 12, paddingRight: 12, borderRadius: 4}}>Show Details</button>
+              <button style={{color: "beige", backgroundColor: "#006039", paddingLeft: 12, paddingRight: 12, borderRadius: 4, marginTop: 10, width: 120}}>Add to cart</button>
             </div>
           ))}
         </div>
-        
     </>
     
   );

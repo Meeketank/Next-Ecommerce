@@ -30,3 +30,7 @@ body {
 li{
   margin-left: 20px;
 }
+
+.Image:hover{
+  opacity: 50;
+}

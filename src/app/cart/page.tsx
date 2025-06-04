@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import cart from "../page"
 
 export default function Cart() {
   return (

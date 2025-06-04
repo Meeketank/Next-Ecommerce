@@ -1,12 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import products from "../app/data/watches.json";
-import Link from "next/link";
+import products from "../app/data/watches.json";import Link from "next/link";
 import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-function Carousel({ products }) {
+type Product = {
+  image: string;
+  name: string;
+  price: number;
+};
+
+function Carousel({products}: {products: Product[]}) {
   const [index, setIndex] = useState(0);
   const itemsPerSlide = 3;
 
@@ -18,16 +23,34 @@ function Carousel({ products }) {
     if (index > 0) setIndex(index - 1);
   };
 
+  const [cart, setCart] = useState([]);
+  const addtocart = (p) => {
+    alert("Item added to cart");
+    setCart([...cart, p])
+  }
+
+  // const router = useRouter();
+  const showdetails = () => {
+    // router.push('/sidebar');
+    alert("See details")
+  };
+
   const visibleItems = products.slice(index * itemsPerSlide, (index + 1) * itemsPerSlide);
 
   return (
     <div style={{ position: "relative", padding: 20, display: "flex", alignItems: "center", justifyContent: "center", gap: 20 }}>
       <button onClick={prev} style={{ fontSize: 24 }}>&lt;</button>
       {visibleItems.map((p: { image: string | StaticImport; name: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; price: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }, i: Key | null | undefined) => (
-        <div key={i} style={{ textAlign: "center", backgroundColor: "#f0f0f0", padding: 10, borderRadius: 8 }}>
-          <Image src={p.image} width={400} height={400} alt="product" />
-          <h4>{p.name}</h4>
-          <p>{p.price}</p>
+        <div key={i} style={{ textAlign: "center", backgroundColor: "#006039", padding: 10, borderRadius: 8 }}>
+          <div style={{width: 380, backgroundColor: "beige"}}>
+            <Image src={p.image} width={400} height={400} alt="product" />
+            <h4 style={{paddingTop: 10}}>{p.name}</h4>
+            <p>Price: {p.price}$</p>
+            <div style={{display: "flex", justifyContent: "center"}}>
+              <button style={{backgroundColor: "#a37e2c", color: "beige", margin: 10, padding: 10, borderRadius: 10}} onClick={showdetails}>Show Details</button>
+              <button style={{backgroundColor: "#a37e2c", color: "beige", margin: 10, padding: 10, borderRadius: 10}} onClick={() => addtocart(p)}>Add to cart</button>
+            </div>
+          </div>
         </div>
       ))}
       <button onClick={next} style={{ fontSize: 24 }}>&gt;</button>
