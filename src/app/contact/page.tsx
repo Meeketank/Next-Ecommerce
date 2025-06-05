@@ -15,12 +15,12 @@ export default function Contact() {
           <nav style={{ display: "flex", gap: 20, color: "beige"}}>
             <Link href="/" >Home</Link>
             <Link href="/">Products</Link>
-            <Link href="/contact">Contact Us</Link>
+            {/* <Link href="/contact">Contact Us</Link> */}
           </nav>
 
           <div style={{ display: "flex", alignItems: "center", gap: 10, color: "beige" }}>
             <input type="text" placeholder="Search..." style={{ padding: 5, borderRadius: 5, border: "1px solid beige" }} />
-            <Image src="/window.svg" width={30} height={30} alt="Cart logo" />
+            <Link href="/cart"><Image src="/window.svg" width={30} height={30} alt="Cart logo" /></Link>
           </div>
         </div>
         <div style={{ padding: 20, textAlign: "center" }}>

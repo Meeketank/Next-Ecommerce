@@ -12,7 +12,7 @@
     "name": "Watch Model 2",
     "brand": "Just Watches",
     "price": 3094,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg",
     "category": "Men"
   },
   {
@@ -29,22 +29,22 @@
     "brand": "Just Watches",
     "price": 3188,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "category": "Women"
   },
   {
     "id": 5,
     "name": "Watch Model 5",
     "brand": "Just Watches",
     "price": 3235,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "image": "https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg",
+    "category": "Men"
   },
   {
     "id": 6,
     "name": "Watch Model 6",
     "brand": "Just Watches",
     "price": 3282,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277406/pexels-photo-277406.jpeg",
     "category": "Unisex"
   },
   {
@@ -52,7 +52,7 @@
     "name": "Watch Model 7",
     "brand": "Just Watches",
     "price": 3329,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Women"
   },
   {
@@ -68,7 +68,7 @@
     "name": "Watch Model 9",
     "brand": "Just Watches",
     "price": 3423,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Unisex"
   },
   {
@@ -77,7 +77,7 @@
     "brand": "Just Watches",
     "price": 3470,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "category": "Women"
   },
   {
     "id": 11,
@@ -85,14 +85,14 @@
     "brand": "Just Watches",
     "price": 3517,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "category": "Men"
   },
   {
     "id": 12,
     "name": "Watch Model 12",
     "brand": "Just Watches",
     "price": 3564,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg",
     "category": "Unisex"
   },
   {
@@ -116,7 +116,7 @@
     "name": "Watch Model 15",
     "brand": "Just Watches",
     "price": 3705,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg",
     "category": "Unisex"
   },
   {
@@ -124,16 +124,16 @@
     "name": "Watch Model 16",
     "brand": "Just Watches",
     "price": 3752,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "image": "https://images.pexels.com/photos/277406/pexels-photo-277406.jpeg",
+    "category": "Women"
   },
   {
     "id": 17,
     "name": "Watch Model 17",
     "brand": "Just Watches",
     "price": 3799,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+    "category": "Men"
   },
   {
     "id": 18,
@@ -148,7 +148,7 @@
     "name": "Watch Model 19",
     "brand": "Just Watches",
     "price": 3893,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Women"
   },
   {
@@ -172,8 +172,8 @@
     "name": "Watch Model 22",
     "brand": "Just Watches",
     "price": 4034,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "image": "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg",
+    "category": "Women"
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "brand": "Just Watches",
     "price": 4081,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "category": "Men"
   },
   {
     "id": 24,
@@ -196,7 +196,7 @@
     "name": "Watch Model 25",
     "brand": "Just Watches",
     "price": 4175,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg",
     "category": "Women"
   },
   {
@@ -204,7 +204,7 @@
     "name": "Watch Model 26",
     "brand": "Just Watches",
     "price": 4222,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277406/pexels-photo-277406.jpeg",
     "category": "Men"
   },
   {
@@ -212,7 +212,7 @@
     "name": "Watch Model 27",
     "brand": "Just Watches",
     "price": 4269,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Unisex"
   },
   {
@@ -221,15 +221,15 @@
     "brand": "Just Watches",
     "price": 4316,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "category": "Women"
   },
   {
     "id": 29,
     "name": "Watch Model 29",
     "brand": "Just Watches",
     "price": 4363,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+    "category": "Men"
   },
   {
     "id": 30,
@@ -252,7 +252,7 @@
     "name": "Watch Model 32",
     "brand": "Just Watches",
     "price": 4504,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg",
     "category": "Men"
   },
   {
@@ -269,22 +269,22 @@
     "brand": "Just Watches",
     "price": 4598,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "category": "Women"
   },
   {
     "id": 35,
     "name": "Watch Model 35",
     "brand": "Just Watches",
     "price": 4645,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "image": "https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg",
+    "category": "Men"
   },
   {
     "id": 36,
     "name": "Watch Model 36",
     "brand": "Just Watches",
     "price": 4692,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277406/pexels-photo-277406.jpeg",
     "category": "Unisex"
   },
   {
@@ -292,7 +292,7 @@
     "name": "Watch Model 37",
     "brand": "Just Watches",
     "price": 4739,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Women"
   },
   {
@@ -308,7 +308,7 @@
     "name": "Watch Model 39",
     "brand": "Just Watches",
     "price": 4833,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Unisex"
   },
   {
@@ -317,7 +317,7 @@
     "brand": "Just Watches",
     "price": 4880,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "category": "Women"
   },
   {
     "id": 41,
@@ -325,14 +325,14 @@
     "brand": "Just Watches",
     "price": 4927,
     "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "category": "Men"
   },
   {
     "id": 42,
     "name": "Watch Model 42",
     "brand": "Just Watches",
     "price": 4974,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg",
     "category": "Unisex"
   },
   {
@@ -356,7 +356,7 @@
     "name": "Watch Model 45",
     "brand": "Just Watches",
     "price": 5115,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/277319/pexels-photo-277319.jpeg",
     "category": "Unisex"
   },
   {
@@ -364,16 +364,16 @@
     "name": "Watch Model 46",
     "brand": "Just Watches",
     "price": 5162,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Men"
+    "image": "https://images.pexels.com/photos/277406/pexels-photo-277406.jpeg",
+    "category": "Women"
   },
   {
     "id": 47,
     "name": "Watch Model 47",
     "brand": "Just Watches",
     "price": 5209,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
-    "category": "Women"
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+    "category": "Men"
   },
   {
     "id": 48,
@@ -388,7 +388,7 @@
     "name": "Watch Model 49",
     "brand": "Just Watches",
     "price": 5303,
-    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg",
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
     "category": "Women"
   },
   {
