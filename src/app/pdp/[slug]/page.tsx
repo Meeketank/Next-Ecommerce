@@ -74,9 +74,9 @@ const btnStyle = {
   fontSize: "1rem"
 };
 
-export default function Pdp({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
-  const productId = parseInt(slug);
+export default function Pdp({ params }: { params: { slug: string } }) {
+  // const { slug } = use(params);
+  const productId = parseInt(params.slug);
   // const product = products.find((item: Product) => item.id === productId);
   const product = products.find((item: Product) => item.id === productId);
   const { addToCart } = useCart();
