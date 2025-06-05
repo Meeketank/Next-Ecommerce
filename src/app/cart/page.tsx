@@ -47,7 +47,7 @@ const decreaseQty = (id: number) => {
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 10, color: "beige" }}>
           <input type="text" placeholder="Search..." style={{ padding: 5, borderRadius: 5, border: "1px solid beige" }} />
-          <Image src="/window.svg" width={30} height={30} alt="Cart logo" />
+          {/* <Image src="/window.svg" width={30} height={30} alt="Cart logo" /> */}
         </div>
       </div>
 
