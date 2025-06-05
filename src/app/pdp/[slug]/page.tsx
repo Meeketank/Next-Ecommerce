@@ -19,34 +19,25 @@ type Product = {
 function Carousel({ products }: { products: Product[] }) {
   const [index, setIndex] = useState(0);
   const itemsPerSlide = 3;
-
   const next = () => {
     if ((index + 1) * itemsPerSlide < products.length) setIndex(index + 1);
   };
-
   const prev = () => {
     if (index > 0) setIndex(index - 1);
   };
-
-  const [cart, setCart] = useState<Product[]>([]);
-  // const addToCart = (p: Product) => {
-  //   alert("Item added to cart");
-  //   setCart([...cart, p]);
-  // };
-
   const { addToCart } = useCart();
 
   const visibleItems = products.slice(index * itemsPerSlide, (index + 1) * itemsPerSlide);
 
   return (
     <div style={{ backgroundColor: "#f8f8f8", padding: "40px 0" }}>
-      <h2 style={{ textAlign: "center", paddingBottom: 20, paddingTop: 20,borderTop: "5px solid #006039" }}>
+      <h2 style={{ textAlign: "center", paddingBottom: 20, paddingTop: 20, borderTop: "5px solid #006039" }}>
         <b>YOU MAY ALSO LIKE</b>
       </h2>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20 }}>
         <button onClick={prev} style={{ fontSize: 24 }}>&lt;</button>
-        {visibleItems.map((p, i) => (
-          <div key={i} style={{ textAlign: "center", backgroundColor: "#006039", padding: 10, borderRadius: 8 }}>
+        {visibleItems.map((p) => (
+          <div key={p.id} style={{ textAlign: "center", backgroundColor: "#006039", padding: 10, borderRadius: 8 }}>
             <div style={{ width: 300, backgroundColor: "beige", borderRadius: 8 }}>
               <Image src={p.image} width={300} height={300} alt={p.name} />
               <h4 style={{ paddingTop: 10 }}>{p.name}</h4>
@@ -84,17 +75,10 @@ const btnStyle = {
 };
 
 export default function Pdp({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params); // ✅ unwrap the Promise safely
+  const { slug } = use(params);
   const productId = parseInt(slug);
-
+  // const product = products.find((item: Product) => item.id === productId);
   const product = products.find((item: Product) => item.id === productId);
-
-  const [cart, setCart] = useState<Product[]>([]);
-  // const addToCart = (p: Product) => {
-  //   alert("Item added to cart");
-  //   setCart([...cart, p]);
-  // };
-
   const { addToCart } = useCart();
 
   if (!product) notFound();
@@ -110,8 +94,8 @@ export default function Pdp({ params }: { params: Promise<{ slug: string }> }) {
           <Link href="/contact">Contact Us</Link>
         </nav>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <input type="text" placeholder="Search..." style={{color: "beige", padding: 5, borderRadius: 5, border: "1px solid beige" }} />
-          <Link href="/cart"><Image src="/window.svg" width={30} height={30} alt="Cart"/></Link>
+          <input type="text" placeholder="Search..." style={{ color: "beige", padding: 5, borderRadius: 5, border: "1px solid beige" }} />
+          <Link href="/cart"><Image src="/window.svg" width={30} height={30} alt="Cart" /></Link>
         </div>
       </header>
 
@@ -131,9 +115,9 @@ export default function Pdp({ params }: { params: Promise<{ slug: string }> }) {
           <p><strong>Brand:</strong> {product.brand}</p>
           <p><strong>Category:</strong> {product.category}</p>
           <p style={{ fontWeight: "bold", fontSize: "1.3rem", margin: "20px 0" }}>₹{product.price}</p>
-          {product.description && (
+          {/* {product.description && (
             <p style={{ marginBottom: 20 }}>{product.description}</p>
-          )}
+          )} */}
           <div style={{ display: "flex", gap: 20 }}>
             <button style={btnStyle} onClick={() => addToCart(product)}>Add to Cart</button>
             <Link href="/">

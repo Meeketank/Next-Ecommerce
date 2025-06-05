@@ -59,7 +59,7 @@ const decreaseQty = (id: number) => {
         ) : (
           <>
             {cart.map((item, index) => (
-              <div key = {item.id} style={{padding: 30}}>
+              // <div key = {item.id} style={{padding: 30}}>
               <div key={`${item.id}-${index}`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "15px 20px", borderBottom: "1px solid #ddd" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <Image src={item.image} alt={item.name} width={100} height={100} style={{ borderRadius: 10, objectFit: "cover" }} />
@@ -73,7 +73,7 @@ const decreaseQty = (id: number) => {
                 </div>
                 <button onClick={() => removeItem(item.id)} style={{ backgroundColor: "transparent", border: "none", color: "red", cursor: "pointer", fontWeight: "bold", fontSize: 16 }} title="Remove item">×</button>
               </div>
-              </div>
+              // </div>
             ))}
 
             <div style={{ textAlign: "right", marginTop: 30, paddingRight: 20 }}>
