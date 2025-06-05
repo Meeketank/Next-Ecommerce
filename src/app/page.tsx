@@ -11,6 +11,9 @@ type Product = {
   image: string;
   name: string;
   price: number;
+  id: number;
+  brand: string;
+  category: string;
 };
 
 function Carousel({products}: {products: Product[]}) {
@@ -38,7 +41,7 @@ function Carousel({products}: {products: Product[]}) {
   return (
     <div style={{ position: "relative", padding: 20, display: "flex", alignItems: "center", justifyContent: "center", gap: 20 }}>
       <button onClick={prev} style={{ fontSize: 24 }}>&lt;</button>
-      {visibleItems.map((p: { image: string | StaticImport; name: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; price: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined;}, i: Key | null | undefined) => (
+      {visibleItems.map((p: Product, i: number) => (
         <div key={i} style={{ textAlign: "center", backgroundColor: "#006039", padding: 10, borderRadius: 8 }}>
           <div style={{width: 380, backgroundColor: "beige"}}>
             <Image src={p.image} width={400} height={400} alt="product" />
