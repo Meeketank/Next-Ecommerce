@@ -21,7 +21,6 @@ const Header = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Filter products on searchTerm change
     if (searchTerm.trim().length > 0) {
       const filteredProducts = products.filter((p) =>
         p.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -34,7 +33,6 @@ const Header = () => {
     }
   }, [searchTerm]);
 
-  // Close suggestions dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
