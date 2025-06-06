@@ -27,6 +27,40 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Override the toast container styles */
+.custom-toast-success {
+  background: #006039 !important;  
+  color: beige !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+}
+.custom-toast-success .Toastify__close-button {
+  color: beige !important;   /* Change close button color */
+}
+.custom-toast-success .Toastify__progress-bar {
+  background: beige !important; /* Change progress bar color */
+}
+
+.custom-toast-error {
+  background: 	#a37e2c !important;  
+  color: beige !important;
+  border-radius: 8px !important;
+}
+
+
+.custom-toast-warn {
+  background: beige !important;  
+  color: #006039 !important;
+  border-radius: 8px !important;
+}
+
+.custom-toast-warn .Toastify__close-button {
+  color: #006039 !important;   /* Change close button color */
+}
+.custom-toast-warn .Toastify__progress-bar {
+  background: #006039 !important; /* Change progress bar color */
+}
+
 li{
   margin-left: 20px;
 }

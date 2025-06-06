@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/app/context/CartContext"; 
+import {toast, Bounce} from 'react-toastify';
 
 type Address = {
   name: string;
@@ -74,7 +75,17 @@ export default function PlaceOrderPage() {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       setSubmitted(true);
-      alert("Order placed successfully!");
+      toast.success("Order Successfully placed, Thank you for shopping", {
+        className: 'custom-toast-success',
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+        transition: Bounce,
+      });
       if (saveAddressChecked)
         localStorage.setItem("savedAddress", JSON.stringify(address));
     }
@@ -83,49 +94,6 @@ export default function PlaceOrderPage() {
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", minHeight: "100vh" }}>
-      {/* Header Section */}
-      <header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          padding: "10px 20px",
-          justifyContent: "space-between",
-          backgroundColor: "#006039",
-          color: "beige",
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-        }}
-      >
-        <Image src="/next.svg" width={80} height={80} alt="Next.js Logo" />
-
-        <nav style={{ display: "flex", gap: 20 }}>
-          <Link href="/" style={{ color: "beige", textDecoration: "none" }}>
-            Home
-          </Link>
-          <Link href="/products" style={{ color: "beige", textDecoration: "none" }}>
-            Products
-          </Link>
-          <Link href="/contact" style={{ color: "beige", textDecoration: "none" }}>Contact Us</Link>
-        </nav>
-
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <input
-            type="text"
-            placeholder="Search..."
-            style={{
-              padding: "5px 10px",
-              borderRadius: 5,
-              border: "1px solid beige",
-              backgroundColor: "transparent",
-              color: "beige",
-            }}
-          />
-          <Link href="/cart">
-            <Image src="/window.svg" width={30} height={30} alt="Cart logo" />
-          </Link>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main
@@ -249,7 +217,7 @@ export default function PlaceOrderPage() {
               cursor: "pointer",
               fontWeight: "600",
               fontSize: 16,
-              marginTop: useSavedAddress ? 0 : 20,
+              marginTop: useSavedAddress ? 25 : 20,
               flexBasis: "100%",
               maxWidth: 180,
               alignSelf: "flex-start",

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
+import {toast, Bounce} from 'react-toastify';
 
 export default function CartPage() {
   const { cart, setCart } = useCart();
@@ -25,31 +26,32 @@ const decreaseQty = (id: number) => {
 };
 
 
-  const removeItem = (id: number) => {
-    setCart(cart.filter(item => item.id !== id));
-    setQuantities(q => {
-      const newQty = { ...q };
-      delete newQty[id];
-      return newQty;
-    });
-  };
+const removeItem = (id: number) => {
+  setCart(cart.filter(item => item.id !== id));
+  setQuantities(q => {
+    const newQty = { ...q };
+    delete newQty[id];
+    return newQty;
+  });
+
+  toast.warn("Item removed from cart", {
+    className: 'custom-toast-warn',
+    position: "top-right",
+    autoClose: 1500,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    transition: Bounce,
+  });
+};
 
   const total = cart.reduce((sum, item) => sum + (item.price * (quantities[item.id] || 1)), 0);
 
   return (
     <>
-      <div style={{ display: "flex", alignItems: "center", padding: 10, justifyContent: "space-between", backgroundColor: "#006039" }}>
-        <Image src="/next.svg" width={80} height={80} alt="Next.js Logo" />
-        <nav style={{ display: "flex", gap: 20, color: "beige" }}>
-          <Link href="/">Home</Link>
-          <Link href="/">Products</Link>
-          <Link href="/contact">Contact Us</Link>
-        </nav>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, color: "beige" }}>
-          <input type="text" placeholder="Search..." style={{ padding: 5, borderRadius: 5, border: "1px solid beige" }} />
-          {/* <Image src="/window.svg" width={30} height={30} alt="Cart logo" /> */}
-        </div>
-      </div>
 
       <div>
         <h1 style={{ textAlign: "center", marginBottom: 20, borderBottom: "5px solid #006039", padding: 20  }}><b>YOUR CART</b></h1>
@@ -59,7 +61,6 @@ const decreaseQty = (id: number) => {
         ) : (
           <>
             {cart.map((item, index) => (
-              // <div key = {item.id} style={{padding: 30}}>
               <div key={`${item.id}-${index}`} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "15px 20px", borderBottom: "1px solid #ddd" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
                   <Image src={item.image} alt={item.name} width={100} height={100} style={{ borderRadius: 10, objectFit: "cover" }} />
@@ -73,7 +74,6 @@ const decreaseQty = (id: number) => {
                 </div>
                 <button onClick={() => removeItem(item.id)} style={{ backgroundColor: "transparent", border: "none", color: "red", cursor: "pointer", fontWeight: "bold", fontSize: 16 }} title="Remove item">×</button>
               </div>
-              // </div>
             ))}
 
             <div style={{ textAlign: "right", marginTop: 30, paddingRight: 20 }}>
