@@ -9,6 +9,8 @@ type CartContextType = {
   cart: CartItem[];
   setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
   addToCart: (product: Product) => void;
+  updateQuantity: (id: number, quantity: number) => void;
+  removeFromCart: (id: number) => void;
 };
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -28,19 +30,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [cart]);
 
   const addToCart = (product: Product) => {
-    // Check if product exists before updating state
     const existingProduct = cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      // Product exists: increase quantity
       setCart((prevCart) =>
         prevCart.map((item) =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
 
-      toast.warn("Item already in cart, quantity increased", {
-        className: 'custom-toast-warn',
+      toast.warn("Item quantity increased", {
+        className: "custom-toast-warn",
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -51,11 +51,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
         transition: Bounce,
       });
     } else {
-      // Product does not exist: add with quantity 1
       setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
 
       toast.success("Item added to cart", {
-        className: 'custom-toast-success',
+        className: "custom-toast-success",
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
@@ -68,8 +67,37 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const updateQuantity = (id: number, quantity: number) => {
+    if (quantity <= 0) {
+      removeFromCart(id);
+      return;
+    }
+
+    setCart((prevCart) =>
+      prevCart.map((item) => (item.id === id ? { ...item, quantity } : item))
+    );
+  };
+
+  const removeFromCart = (id: number) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+
+    toast.warn("Item removed from cart", {
+      className: "custom-toast-warn",
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cart, setCart, addToCart }}>
+    <CartContext.Provider
+      value={{ cart, setCart, addToCart, updateQuantity, removeFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );
