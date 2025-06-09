@@ -39,7 +39,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         )
       );
 
-      toast.warn("Item quantity increased", {
+      toast.warn("Item already in cart increase from there", {
         className: "custom-toast-warn",
         position: "top-right",
         autoClose: 2000,
