@@ -1,72 +1,35 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import { useCart } from "../context/CartContext";
-import { useState } from "react";
 import { toast, Bounce } from "react-toastify";
 import CartItems from "@/components/cart/cartitems";
 import CartButtons from "@/components/cart/cartbuttons";
 
 export default function CartPage() {
-  const { cart, setCart } = useCart();
-  const [quantities, setQuantities] = useState<{ [id: number]: number }>({});
-  let lastAlertTime = 0;
+  const { cart, updateQuantity, removeFromCart } = useCart();
 
-  const increaseQty = (id: number) => {
-    setQuantities((q) => ({ ...q, [id]: (q[id] || 1) + 1 }));
+  const increaseQty = (id: number, currentQty: number) => {
+    updateQuantity(id, currentQty + 1);
   };
 
-  const decreaseQty = (id: number) => {
-    const now = Date.now();
-    setQuantities((q) => {
-      if ((q[id] || 1) === 1) {
-        if (now - lastAlertTime > 1000) {
-           toast.error("Item cant be increased below 1", {
-            className: 'custom-toast-error',
-            position: "top-right",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Bounce,
-          });
-          lastAlertTime = now;
-        }
-        return q;
-      }
-      return { ...q, [id]: q[id] - 1 };
-    });
+  const decreaseQty = (id: number, currentQty: number) => {
+    if (currentQty === 1) {
+      toast.error("Item can't be decreased below 1", {
+        className: "custom-toast-error",
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+        transition: Bounce,
+      });
+      return;
+    }
+    updateQuantity(id, currentQty - 1);
   };
 
-  const removeItem = (id: number) => {
-    setCart(cart.filter((item) => item.id !== id));
-    setQuantities((q) => {
-      const newQty = { ...q };
-      delete newQty[id];
-      return newQty;
-    });
-
-    toast.warn("Item removed from cart", {
-      className: "custom-toast-warn",
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Bounce,
-    });
-  };
-
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * (quantities[item.id] || 1),
-    0
-  );
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <div>
@@ -86,10 +49,17 @@ export default function CartPage() {
       ) : (
         <>
           {cart.map((item) => (
-            <CartItems key={item.id} item={item} quantity={quantities[item.id] || 1} increaseQty={() => increaseQty(item.id)} decreaseQty={() => decreaseQty(item.id)} removeItem={() => removeItem(item.id)}/>
+            <CartItems
+              key={item.id}
+              item={item}
+              quantity={item.quantity}
+              increaseQty={() => increaseQty(item.id, item.quantity)}
+              decreaseQty={() => decreaseQty(item.id, item.quantity)}
+              removeItem={() => removeFromCart(item.id)}
+            />
           ))}
 
-          <CartButtons total = {total}/>
+          <CartButtons total={total} />
         </>
       )}
     </div>

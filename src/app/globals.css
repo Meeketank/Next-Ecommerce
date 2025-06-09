@@ -66,3 +66,35 @@ body {
 li{
   margin-left: 20px;
 }
+
+
+.watch-hover-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.watch-hover-image {
+  transition: filter 0.3s ease;
+}
+
+.watch-hover-container:hover .watch-hover-image {
+  filter: brightness(50%);
+}
+
+.watch-hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: beige;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.watch-hover-container:hover .watch-hover-text {
+  opacity: 1;
+}
