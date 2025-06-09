@@ -15,7 +15,7 @@ export type Product = {
 const Carousel = ({ products }: { products: Product[] }) => {
   const [index, setIndex] = useState(0);
   const itemsPerSlide = 3;
-  const { cart, addToCart, updateQuantity } = useCart();
+  const { cart, addToCart, updateQuantity, removeFromCart } = useCart();
 
   const next = () => {
     if ((index + 1) * itemsPerSlide < products.length) setIndex(index + 1);
@@ -79,7 +79,12 @@ const Carousel = ({ products }: { products: Product[] }) => {
                         width: 30,
                         height: 43
                       }}
-                      onClick={() => updateQuantity(p.id, cartItem.quantity - 1)}
+                      onClick={() =>
+                        cartItem.quantity > 1
+                        ? updateQuantity(p.id, cartItem.quantity - 1)
+                        : removeFromCart(p.id)
+                      }
+                      // onClick={() => updateQuantity(p.id, cartItem.quantity - 1)}
                     >
                       -
                     </button>

@@ -4,7 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/app/context/CartContext";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/footer";
-import HomeBanner from "@/components/HomeBanner/homebanner";
+import HomeBanner from "@/components/home/homebanner";
 import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

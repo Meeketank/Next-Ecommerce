@@ -18,8 +18,8 @@ const DisplayHome = () => {
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "20px" }}>
         <div className="watch-hover-container" style={{ position: "relative", width: "400px", height: "200px", marginLeft: 10 }}>
-          <Link href={`/pdp/${products[6].id}`}>
-            <Image src={products[6].image} alt="watch image" fill className="watch-hover-image" />
+          <Link href={`/pdp/${products[4].id}`}>
+            <Image src={products[4].image} alt="watch image" fill className="watch-hover-image" />
           </Link>
           <div className="watch-hover-text">Show Details</div>
         </div>
