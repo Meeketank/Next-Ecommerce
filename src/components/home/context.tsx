@@ -23,12 +23,12 @@ const ContextSection = () => {
       </div>
 
       <div style={{ flex: 1, position: "relative", width: "100%", height: "400px", borderRadius: "12px", overflow: "hidden" }}>
-        <Image
+        <Link href={`/pdp/${products[22]?.id}`}><Image
           src={products[22].image}
           alt="Watch Collection"
           fill
           style={{ objectFit: "cover" }}
-        />
+        /></Link>
       </div>
     </section>
   );
